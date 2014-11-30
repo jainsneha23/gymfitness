@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>Gym Fitness</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/layout.css">
+  </head>
+  <body ng-app="gymApp" ng-controller="navController">
+    <header>
+      <nav>
+        <a ng-repeat="p in pages" href="{{p.url}}">{{p.name}}</a>
+      </nav>
+    </header>
+    <ng-view></ng-view>
+  <footer></footer>
+  
+</body>
+<script src="js/library/jquery.min.js"></script>
+<script src="js/library/jquery-ui.min.js"></script>
+<script src="js/library/angular.min.js"></script>
+<script src="js/library/angular-route.js"></script>
+<script src="js/directives/ngDraggable.js"></script>
+<script src="js/directives/sortable.js"></script>
+<script src="js/directives/accordion.js"></script>
+<script src="js/main.js"></script>
+<script src="js/controllers/userController.js"></script>
+</html>
