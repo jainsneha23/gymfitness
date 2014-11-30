@@ -1,0 +1,99 @@
+html,body{
+	font-size: 16px;
+	font-family: Helvetica, Arial, "sans-serif";
+	color: #666;
+	width: 100%;
+}
+
+header{
+	height: 60px;
+}
+
+.table{
+	display: table;
+	width: 100%;
+	border-bottom: 2px solid #000;
+}
+
+.cell{
+	display: table-cell;
+	vertical-align: middle;
+	width:50%;
+	text-align:center;
+	height: 251px;
+}
+
+.table img{
+	height: 300px;
+}
+
+nav{
+	background-color:rgba(0,0,0,1);
+	height: 100%;
+	text-align: center;
+	width: 100%;
+}
+
+nav a{
+	display: inline-block;
+	padding: 21px 2%;
+	color:white;
+}
+
+nav a:visited{
+	border-bottom: 2px solid red;
+	color:white;
+}
+
+ng-view{
+	display: block;
+	padding: 5% 0;
+}
+
+form section{
+}
+
+form header{
+	height:auto;
+	padding: 10px 0;
+}
+
+form input{
+	display: block;
+	width: 100%;
+	margin: 10px auto;
+	padding: 10px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+form input[type="file"]{
+	padding: 10px 0;
+}
+
+form input[type="radio"]{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+	text-align: left;
+}
+
+form label{
+	width: 40%;
+	display: inline-block;
+}
+
+#profileDiv ul li{
+	line-height: 40px;
+}
+
+#profileDiv header{
+	height: auto;
+	line-height: 30px;
+}
+
+#profileDiv section{
+	padding:10px;
+}
