@@ -3,10 +3,7 @@ html,body{
 	font-family: Helvetica, Arial, "sans-serif";
 	color: #666;
 	width: 100%;
-}
-
-header{
-	height: 60px;
+	min-width:1024px;
 }
 
 .table{
@@ -27,22 +24,33 @@ header{
 	height: 300px;
 }
 
+body header{
+    height: 116px;
+}
+
+body header img{
+    padding: 0 0 0 5%;
+    width: 300px;
+}
+
 nav{
-	background-color:rgba(0,0,0,1);
-	height: 100%;
-	text-align: center;
-	width: 100%;
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+	margin: 0 20px;
 }
 
 nav a{
 	display: inline-block;
-	padding: 21px 2%;
-	color:white;
-}
-
-nav a:visited{
-	border-bottom: 2px solid red;
-	color:white;
+	vertical-align: text-bottom;
+	padding: 45px 0 10px 0;
+	width: 90px;
+	color: black;
+	background-color: rgb(169, 210, 64);
+	text-align: center;
+	margin:  0 10px;
+	font-weight: bold;
 }
 
 ng-view{
@@ -61,6 +69,7 @@ form header{
 form input{
 	display: block;
 	width: 100%;
+	max-width: 300px;
 	margin: 10px auto;
 	padding: 10px;
 	box-sizing: border-box;
@@ -96,4 +105,9 @@ form label{
 
 #profileDiv section{
 	padding:10px;
+}
+
+#homeGallery{
+	height: 500px;
+	opacity: 0.8;
 }
