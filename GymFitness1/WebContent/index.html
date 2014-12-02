@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+    
+    <title>Gym Fitness</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel='stylesheet' href='css/angular-carousel.css' />
+    <link rel="stylesheet" href="css/layout.css">
+  </head>
+  <body ng-app="gymApp" ng-controller="homeController">
+
+    <header>
+      <div class="wrapper">
+      <a href="#/"><img src="images/logo.png" /></a>
+      <nav>
+        <a ng-repeat="p in pages" href="{{p.url}}">{{p.name}}</a>
+      </nav>
+      </div>
+    </header>
+    <div ng-view class="ngview"></div>
+  <footer>
+    <div class="text_right">
+      Copyright at Jain Developers @2014&nbsp;&nbsp;
+    </div>
+  </footer>
+  
+</body>
+<script src="js/library/angular.min.js"></script>
+<script src="js/library/angular-touch.min.js"></script>
+<script src="js/library/angular-route.js"></script>
+<script src="js/library/angular-carousel.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/controllers/memberController.js"></script>
+</html>

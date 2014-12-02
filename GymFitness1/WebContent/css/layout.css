@@ -1,0 +1,189 @@
+html,body{
+	font-size: 16px;
+	font-family: Helvetica, Arial, "sans-serif";
+	color: #666;
+	width: 100%;
+	/* min-width: 768px; */
+	/* min-height: 620px; */
+	height: 100%;
+	/* overflow: hidden; */
+}
+
+div{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.wrapper{
+	position: relative;
+	max-width:1024px;
+	margin: auto;
+	height: 100%;
+}
+
+.text_right{
+	text-align: right;
+}
+
+.abscenter{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+body header{
+    height: 10%;
+    box-shadow: 0px 6px 6px -4px rgba(0, 0, 0, 0.6);
+    background: #ac0376; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FjMDM3NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiOTA0NGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ac0376 0%, #b9044d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ac0376), color-stop(100%,#b9044d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ac0376 0%,#b9044d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ac0376 0%,#b9044d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ac0376 0%,#b9044d 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ac0376 0%,#b9044d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac0376', endColorstr='#b9044d',GradientType=0 ); /* IE6-8 */
+}
+
+body header img{
+    padding: 20px 5%;
+}
+
+body header nav{
+	position: absolute;
+	bottom: 0px;
+	right: 0;
+}
+
+body header nav a{
+	display: inline-block;
+	color: #ffffff;
+	padding: 10px;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.ngview{
+	position: relative;
+	height: 85%;
+}
+
+body footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 5%;
+	line-height: 30px;
+	background-color: #433b3f;
+	color: #fffefe;
+}
+
+form{
+	display: inline-block;
+	margin: auto;
+	box-shadow: 0px 0px 5px 0px rgba(67, 59, 63, 0.5);
+	padding: 30px;
+	max-width: 600px;
+	width: 50%;
+	height: 30%;
+}
+
+form header{
+	height:auto;
+	padding: 10px 0;
+}
+
+form input{
+	display: block;
+	width: 100%;
+	max-width: 300px;
+	margin: 10px auto;
+	padding: 10px;
+	border: 1px solid rgb(214, 214, 214);
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+form input[type="file"]{
+	padding: 10px 0;
+}
+
+form input[type="radio"]{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+	text-align: left;
+}
+
+form label{
+	width: 40%;
+	display: inline-block;
+}
+
+#profileDiv ul li{
+	line-height: 40px;
+}
+
+#profileDiv header{
+	height: auto;
+	line-height: 30px;
+}
+
+#profileDiv section{
+	padding:10px;
+}
+
+#homeGallery{
+	height: 80%;
+	opacity: 0.8;
+}
+
+#index_footer{
+	background-color: #f6f6f6;
+	height: 20%;
+	font-size: 32px;
+	text-align: center;
+	font-stretch: extra-condensed;
+	box-shadow: 0px 6px 6px -4px rgba(0, 0, 0, 0.6);
+}
+
+#index_footer .left,#index_footer .right{
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    line-height: 100%;
+}
+
+#index_footer .right{
+	border-left:1px solid #ccc;
+}
+
+#index_footer span {
+    width: 100%;
+    height: 40px;
+}
+
+.table{
+	display: table;
+	width: 100%;
+	border-bottom: 2px solid #000;
+}
+
+.cell{
+	display: table-cell;
+	vertical-align: middle;
+	width:50%;
+	text-align:center;
+	height: 251px;
+}
+
+.table img{
+	height: 300px;
+}
