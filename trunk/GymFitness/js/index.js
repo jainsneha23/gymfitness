@@ -5,25 +5,27 @@
 
           //$locationProvider.html5Mode(true);
 
+          var url = 'views/home/';
+
           $routeProvider.
           when('/', {
-              templateUrl: 'views/home.html'
+              templateUrl: url+s'home.html'
           }).
           when('/facilities', {
-              templateUrl: 'views/facilities.html'
+              templateUrl: url+'facilities.html'
           }).
           when('/activities', {
-              templateUrl: 'views/activities.html'
+              templateUrl: url+'activities.html'
           }).
           when('/member', {
-              templateUrl: 'views/members.html',
+              templateUrl: url+'members.html',
               controller: 'memberController'
           }).
           when('/about', {
-              templateUrl: 'views/about.html'
+              templateUrl: url+'about.html'
           }).
           when('/contact', {
-              templateUrl: 'views/contact.html'
+              templateUrl: url+'contact.html'
           }).
           otherwise({
               redirectTo: '/'
