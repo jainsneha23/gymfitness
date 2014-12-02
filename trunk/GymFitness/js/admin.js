@@ -43,13 +43,13 @@
           "url": "#profile"
       }, {
           "name": "Employee Manager",
-          "url": "#register"
+          "url": "#employee"
       }, {
           "name": "User Manager",
-          "url": "#member"
+        "url": "#user"
       }, {
-          "name": "About Us",
-          "url": "#about"
+          "name": "Gym Manager",
+          "url": "#gym"
       }, {
           "name": "Sign Out",
           "url": "#signout"

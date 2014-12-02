@@ -36,23 +36,17 @@
       $scope.type = "";
 
       $scope.pages = [{
-          "name": "Home",
-          "url": "#home"
+          "name": "Activities",
+          "url": "#activities"
       }, {
           "name": "Facilities",
           "url": "#facilities"
       }, {
-          "name": "Activities",
-          "url": "#activities"
+          "name": "Contact Us",
+          "url": "#contact"
       }, {
           "name": "Members",
           "url": "#member"
-      }, {
-          "name": "About Us",
-          "url": "#about"
-      }, {
-          "name": "Contact Us",
-          "url": "#contact"
       }];
       $scope.myInterval = 3000;
 

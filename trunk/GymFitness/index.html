@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
     
     <title>Gym Fitness</title>
     
@@ -13,23 +13,21 @@
     <link rel="stylesheet" href="css/layout.css">
   </head>
   <body ng-app="gymApp" ng-controller="homeController">
+
     <header>
-      <img src="images/logo.png" />
+      <div class="wrapper">
+      <a href="#/"><img src="images/logo.png" /></a>
       <nav>
         <a ng-repeat="p in pages" href="{{p.url}}">{{p.name}}</a>
       </nav>
+      </div>
     </header>
-
-    <div id="homeGallery">
-      <ul rn-carousel class="image" rn-carousel-auto-slide rn-carousel-locked>
-        <li ng-repeat="i in galleryImages">
-          <img src="{{i.image}}"/>
-        </li>
-      </ul>
+    <div ng-view class="ngview"></div>
+  <footer>
+    <div class="text_right">
+      Copyright at Jain Developers @2014&nbsp;&nbsp;
     </div>
-
-    <ng-view></ng-view>
-  <footer></footer>
+  </footer>
   
 </body>
 <script src="js/library/angular.min.js"></script>
