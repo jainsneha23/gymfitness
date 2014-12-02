@@ -25,7 +25,7 @@ gymApp.controller('memberController', function($scope, $http, $window) {
                     window.open("customer.html");
             }).error(function(data, status, headers, config) {
                 $scope.message = data;
-                $window.open("admin.html", "_self");
+                $window.open("employee.html", "_self");
             });
 
     };

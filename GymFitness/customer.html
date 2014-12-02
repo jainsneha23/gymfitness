@@ -13,12 +13,19 @@
   </head>
   <body ng-app="gymApp" ng-controller="navController">
     <header>
+      <div class="wrapper">
+      <a href="#/"><img src="images/logo.png" /></a>
       <nav>
         <a ng-repeat="p in pages" href="{{p.url}}">{{p.name}}</a>
       </nav>
+      </div>
     </header>
-    <ng-view></ng-view>
-  <footer></footer>
+    <div ng-view class="ngview"></div>
+  <footer>
+    <div class="text_right">
+      Copyright at Jain Developers @2014&nbsp;&nbsp;
+    </div>
+  </footer>
   
 </body>
 <script src="js/library/jquery.min.js"></script>
