@@ -9,21 +9,23 @@
           when('/', {
               templateUrl: 'views/home.html'
           }).
-          when('/facilities', {
-              templateUrl: 'views/facilities.html'
+          when('/profile', {
+              templateUrl: 'views/profile.html',
+              controller : 'profileController'
           }).
-          when('/activities', {
-              templateUrl: 'views/activities.html'
+          when('/customerProfile', {
+              templateUrl: 'views/profile.html',
+              controller : 'profileController'
           }).
-          when('/member', {
-              templateUrl: 'views/members.html',
-              controller: 'memberController'
+          when('/register', {
+              templateUrl: 'views/register.html',
+              controller: 'registerController'
           }).
-          when('/about', {
-              templateUrl: 'views/about.html'
+          when('/dietPlans', {
+              templateUrl: 'views/dietPlans.html'
           }).
-          when('/contact', {
-              templateUrl: 'views/contact.html'
+          when('/exerciseRoutines', {
+              templateUrl: 'views/exerciseRoutines.html'
           }).
           otherwise({
               redirectTo: '/'
@@ -39,40 +41,19 @@
           "name": "Home",
           "url": "#home"
       }, {
-          "name": "Facilities",
-          "url": "#facilities"
+          "name": "Profile",
+          "url": "#profile"
       }, {
-          "name": "Activities",
-          "url": "#activities"
+          "name": "Customer Management",
+          "url": "#customerProfile"
       }, {
-          "name": "Members",
-          "url": "#member"
+          "name": "New Customer",
+          "url": "#register"
       }, {
-          "name": "About Us",
-          "url": "#about"
+          "name": "Diet Plans",
+          "url": "#dietPlans"
       }, {
-          "name": "Contact Us",
-          "url": "#contact"
-      }];
-      $scope.myInterval = 3000;
-
-      $scope.galleryImages = [{
-          image: 'images/gallery1.jpg'
-      }, {
-          image: 'images/gallery2.jpg'
-      }, {
-          image: 'images/gallery3.jpg'
-      }, {
-          image: 'images/gallery4.jpg'
-      }, {
-          image: 'images/gallery5.jpg'
-      }, {
-          image: 'images/gallery6.jpg'
-      }, {
-          image: 'images/gallery7.jpg'
-      }, {
-          image: 'images/gallery8.jpg'
-      }, {
-          image: 'images/gallery9.jpg'
+          "name": "Exercise Routines",
+          "url": "#exerciseRoutines"
       }];
   });
