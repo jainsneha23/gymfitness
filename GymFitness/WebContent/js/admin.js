@@ -1,29 +1,27 @@
-  var gymApp = angular.module('gymApp', ['ngRoute']);
+  var gymApp = angular.module('gymApp', ['ngRoute', 'ui.bootstrap']);
 
   gymApp.config(['$routeProvider', '$locationProvider',
       function($routeProvider, $locationProvider) {
 
           //$locationProvider.html5Mode(true);
 
+          var url = "views/admin/";
+
           $routeProvider.
           when('/', {
-              templateUrl: 'views/home.html'
+              templateUrl: url + 'home.html'
           }).
-          when('/facilities', {
-              templateUrl: 'views/facilities.html'
+          when('/gym', {
+              templateUrl: url + 'gym.html',
+              controller: 'gymController'
           }).
-          when('/activities', {
-              templateUrl: 'views/activities.html'
+          when('/employee', {
+              templateUrl: url + 'employee.html',
+              controller: 'employeeController'
           }).
-          when('/member', {
-              templateUrl: 'views/members.html',
-              controller: 'memberController'
-          }).
-          when('/about', {
-              templateUrl: 'views/about.html'
-          }).
-          when('/contact', {
-              templateUrl: 'views/contact.html'
+          when('/customer', {
+              templateUrl: url + 'customer.html',
+              controller: 'customerController'
           }).
           otherwise({
               redirectTo: '/'
@@ -36,22 +34,13 @@
       $scope.type = "";
 
       $scope.pages = [{
-          "name": "Home",
-          "url": "#home"
-      }, {
-          "name": "My profile",
-          "url": "#profile"
-      }, {
-          "name": "Employee Manager",
-          "url": "#employee"
-      }, {
-          "name": "User Manager",
-        "url": "#user"
-      }, {
-          "name": "Gym Manager",
+          "name": "Gym",
           "url": "#gym"
       }, {
-          "name": "Sign Out",
-          "url": "#signout"
+          "name": "Employee",
+          "url": "#employee"
+      }, {
+          "name": "Customer",
+          "url": "#customer"
       }];
   });
