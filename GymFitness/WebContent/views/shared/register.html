@@ -1,0 +1,25 @@
+<form name="registerForm" class="form">
+	<div ng-show='message'>{{message}}</div>
+	
+		<input type="file" name="image" ng-model="registerFormData.image" placeholder="Upload Pic">
+		<input type="text" name="userid" ng-model="registerFormData.userid" placeholder="Username" ngRequired>
+
+		<section>
+		<header>Personal Details</header>
+		<input type="text" name="fname" ng-model="registerFormData.fname" placeholder="First Name" ngRequired>
+		<input type="text" name="lname" ng-model="registerFormData.lname" placeholder="Last Name" ngRequired>
+		<label><input type="radio" ng-model="registerFormData.gender" name="gender" value="male" ngRequired>Male</label>
+		<label><input type="radio" ng-model="registerFormData.gender" name="gender" value="female" ngRequired>Female</label>
+		<input type="date" name="dob" ng-model="registerFormData.dob" placeholder="Date of Birth" ngRequired>
+		</section>
+
+		<section>
+		<header>Contact Details</header>
+		<input type="number" name="phone" ng-model="registerFormData.phone" placeholder="Contact Number" ngRequired>
+		<input type="email" name="email" ng-model="registerFormData.email" placeholder="Email" ngRequired>
+		</section>
+	
+	<input type="submit" value="Register" ng-click=registerUser(registerForm)>
+</form>
+
+{{registerFormData}}
