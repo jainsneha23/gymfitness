@@ -4,28 +4,30 @@
       function($routeProvider, $locationProvider) {
 
           //$locationProvider.html5Mode(true);
+          var url = 'views/employee/';
+          var shared = 'views/shared/';
 
           $routeProvider.
           when('/', {
-              templateUrl: 'views/home.html'
+              templateUrl: url+'home.html'
           }).
           when('/profile', {
-              templateUrl: 'views/profile.html',
+              templateUrl: shared+'profile.html',
               controller : 'profileController'
           }).
           when('/customerProfile', {
-              templateUrl: 'views/profile.html',
+              templateUrl: shared+'profile.html',
               controller : 'profileController'
           }).
           when('/register', {
-              templateUrl: 'views/register.html',
+              templateUrl: shared+'register.html',
               controller: 'registerController'
           }).
           when('/dietPlans', {
-              templateUrl: 'views/dietPlans.html'
+              templateUrl: url+'dietPlans.html'
           }).
           when('/exerciseRoutines', {
-              templateUrl: 'views/exerciseRoutines.html'
+              templateUrl: url+'exerciseRoutines.html'
           }).
           otherwise({
               redirectTo: '/'

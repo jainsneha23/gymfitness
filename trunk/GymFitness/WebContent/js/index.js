@@ -1,29 +1,31 @@
-  var gymApp = angular.module('gymApp', ['ngRoute', 'angular-carousel']);
+  var gymApp = angular.module('gymApp', ['ngRoute', 'ui.bootstrap']);
 
   gymApp.config(['$routeProvider', '$locationProvider',
       function($routeProvider, $locationProvider) {
 
           //$locationProvider.html5Mode(true);
 
+          var url = 'views/home/';
+
           $routeProvider.
           when('/', {
-              templateUrl: 'views/home.html'
+              templateUrl: url + 'home.html'
           }).
           when('/facilities', {
-              templateUrl: 'views/facilities.html'
+              templateUrl: url + 'facilities.html'
           }).
           when('/activities', {
-              templateUrl: 'views/activities.html'
+              templateUrl: url + 'activities.html'
           }).
           when('/member', {
-              templateUrl: 'views/members.html',
+              templateUrl: url + 'members.html',
               controller: 'memberController'
           }).
           when('/about', {
-              templateUrl: 'views/about.html'
+              templateUrl: url + 'about.html'
           }).
           when('/contact', {
-              templateUrl: 'views/contact.html'
+              templateUrl: url + 'contact.html'
           }).
           otherwise({
               redirectTo: '/'
@@ -69,4 +71,37 @@
       }, {
           image: 'images/gallery9.jpg'
       }];
+  });
+
+  gymApp.controller('memberController', function($scope, $http, $window) {
+
+      $scope.message = '';
+
+      $scope.loginFormData = {
+          username: "",
+          password: ""
+      };
+
+      $scope.loginUser = function(form) {
+
+          if (!form.$dirty || !form.$valid) {
+              $scope.message = "Please fill up all fields";
+              return;
+          }
+
+          $http.post('Login', [$scope.loginFormData])
+              .success(function(data, status, headers, config) {
+                  data = JSON.parse(data);
+                  if (data.type == "admin")
+                      window.open("admin.html");
+                  if (data.type == "employee")
+                      window.open("employee.html");
+                  if (data.type == "customer")
+                      window.open("customer.html");
+              }).error(function(data, status, headers, config) {
+                  $scope.message = data;
+              });
+
+      };
+
   });
