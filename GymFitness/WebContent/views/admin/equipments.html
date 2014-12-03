@@ -1,5 +1,22 @@
+<div class="width80">
+<button type="button" ng-click="editItems = !editItems" class="btn btn-primary pull-right">
+<span ng-show="!editItems"><i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</span>
+<span ng-show="editItems">&nbsp;Save</span>
+</button>
+</div>
+
+<form class="addItem width80" ng-show="editItems">
+<input type="text" ng-model="form.name" Placeholder="Name of Equipment"/>
+<textarea type="text" placeholder="Description" ng-model="form.description"></textarea>
+<button type="button" ng-click="addItem()" class="btn btn-primary">Add Item</button>
+</form>
+
 <accordion close-others="true">
-	<accordion-group heading="{{obj.name}}" ng-repeat="obj in equipments_model">
+	<accordion-group ng-repeat="obj in equipments_model" class="width80">
+		<accordion-heading>
+            {{obj.name}}
+            <button type="button" ng-click="deleteItem($index)" class="btn btn-danger" ng-show="editItems">X</button>
+        </accordion-heading>
 		{{obj.description}}
 	</accordion-group>
 </accordion>

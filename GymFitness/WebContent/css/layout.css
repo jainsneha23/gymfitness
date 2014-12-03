@@ -72,6 +72,7 @@ font-weight: bold;
 .ngview{
 position: relative;
 height: 85%;
+overflow-y: auto;
 }
 
 body footer{
@@ -84,7 +85,65 @@ background-color: #433b3f;
 color: #fffefe;
 }
 
-form{
+/***Index page****/
+
+#homeGallery{
+height: 80%;
+opacity: 0.8;
+}
+
+#index_footer{
+background-color: #f6f6f6;
+height: 20%;
+font-size: 32px;
+text-align: center;
+font-stretch: extra-condensed;
+box-shadow: 0px 6px 6px -4px rgba(0, 0, 0, 0.6);
+}
+
+#index_footer .left,#index_footer .right{
+position: relative;
+display: inline-block;
+width: 49%;
+height: 100%;
+line-height: 100%;
+}
+
+#index_footer .right{
+border-left:1px solid #ccc;
+}
+
+#index_footer span {
+width: 100%;
+height: 40px;
+}
+
+/***Index page****/
+
+.width80{
+	width: 80%;
+	margin: 20px auto;
+	max-width: 500px;
+	min-height: 30px;
+	position: relative;
+}
+
+accordion button.btn-danger{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+form.addItem input, form.addItem textarea,form.addItem button{
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+/*form{
 display: inline-block;
 margin: auto;
 box-shadow: 0px 0px 5px 0px rgba(67, 59, 63, 0.5);
@@ -142,36 +201,6 @@ line-height: 30px;
 padding:10px;
 }
 
-#homeGallery{
-height: 80%;
-opacity: 0.8;
-}
-
-#index_footer{
-background-color: #f6f6f6;
-height: 20%;
-font-size: 32px;
-text-align: center;
-font-stretch: extra-condensed;
-box-shadow: 0px 6px 6px -4px rgba(0, 0, 0, 0.6);
-}
-
-#index_footer .left,#index_footer .right{
-position: relative;
-display: inline-block;
-width: 49%;
-height: 100%;
-line-height: 100%;
-}
-
-#index_footer .right{
-border-left:1px solid #ccc;
-}
-
-#index_footer span {
-width: 100%;
-height: 40px;
-}
 
 .table{
 display: table;
@@ -189,4 +218,4 @@ height: 251px;
 
 .table img{
 height: 300px;
-}
+}*/
