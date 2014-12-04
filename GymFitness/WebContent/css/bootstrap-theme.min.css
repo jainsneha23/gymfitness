@@ -482,3 +482,33 @@
 .panel-heading{
   cursor:pointer;
 }
+
+a:hover,
+a:focus {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+  background: none;
+  border: none;
+}
+
+.nav-tabs.nav-justified > li > a{
+  border-radius: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+}
+
+.nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus{
+  border: none;
+  border-right: 1px solid #DDD;
+  border-bottom: 5px solid #275D8D;
+  background: none;
+  padding-bottom: 10px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  color:#337ab7;
+}
