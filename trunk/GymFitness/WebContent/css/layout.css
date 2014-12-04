@@ -66,7 +66,7 @@ nav a{
 	border-bottom: 2px solid rgba(0,0,0,0);
 }
 
-header nav a:hover, header a:focus{
+header nav a:hover, header nav a:focus{
   text-decoration: none;
   color: #fff;
   border-bottom: 2px solid #fff;
