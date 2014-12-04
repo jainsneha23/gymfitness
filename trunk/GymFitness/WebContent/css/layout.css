@@ -57,8 +57,19 @@ padding: 20px 5%;
 
 body header nav{
 position: absolute;
-bottom: 0px;
+bottom: 10px;
 right: 0;
+}
+
+nav a{
+	display: inline-block;
+	border-bottom: 2px solid rgba(0,0,0,0);
+}
+
+nav a:hover, a:focus{
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 2px solid #fff;
 }
 
 body header nav a{
@@ -89,7 +100,7 @@ color: #fffefe;
 
 #homeGallery{
 height: 80%;
-opacity: 0.8;
+overflow: hidden;
 }
 
 #index_footer{

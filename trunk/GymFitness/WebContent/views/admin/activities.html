@@ -1,5 +1,5 @@
 <div class="width80">
-<button type="button" ng-click="editItems = !editItems" class="btn btn-primary pull-right">
+<button type="button" ng-click="edit()" class="btn btn-primary pull-right">
 <span ng-show="!editItems"><i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</span>
 <span ng-show="editItems">&nbsp;Save</span>
 </button>
@@ -12,7 +12,7 @@
 </form>
 
 <accordion close-others="true">
-	<accordion-group ng-repeat="obj in activities_model" class="width80" is-disabled="editItems">
+	<accordion-group ng-repeat="obj in tabModel[0].model" class="width80" is-disabled="editItems" is-open="isOpened[$index]">
 		<accordion-heading>
             {{obj.name}}
             <button type="button" ng-click="deleteItem($index)" class="btn btn-danger" ng-show="editItems">X</button>

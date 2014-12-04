@@ -3,7 +3,7 @@
 		<slide ng-repeat="slide in galleryImages" active="slide.active">
 			<img ng-src="{{slide.image}}" style="margin:auto;">
 			<div class="carousel-caption">
-				<h4>Slide {{$index}}</h4>
+				<h4>{{slide.description}}</h4>
 			</div>
 		</slide>
 	</carousel>
