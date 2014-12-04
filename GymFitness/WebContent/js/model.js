@@ -46,6 +46,34 @@ var model = (function() {
             category: 'All Specific Body Parts',
             quantity: 3,
             description: 'Made of heavy steel pipe and with powder coated paint Baspo Personal Gym Bench 9 in 1 can be utilised in doing arm presses, thigh exercises, leg curls and many more. The bench has a heavy duty frame which allows weighty built people also to exercise freely.'
+        }],
+        galleryImages: [{
+            image: 'images/gallery1.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery2.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery3.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery4.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery5.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery6.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery7.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery8.jpg',
+            description: 'Description'
+        }, {
+            image: 'images/gallery9.jpg',
+            description: 'Description'
         }]
     }
     return modelData;

@@ -52,25 +52,7 @@
       }];
       $scope.myInterval = 3000;
 
-      $scope.galleryImages = [{
-          image: 'images/gallery1.jpg'
-      }, {
-          image: 'images/gallery2.jpg'
-      }, {
-          image: 'images/gallery3.jpg'
-      }, {
-          image: 'images/gallery4.jpg'
-      }, {
-          image: 'images/gallery5.jpg'
-      }, {
-          image: 'images/gallery6.jpg'
-      }, {
-          image: 'images/gallery7.jpg'
-      }, {
-          image: 'images/gallery8.jpg'
-      }, {
-          image: 'images/gallery9.jpg'
-      }];
+      $scope.galleryImages = model.galleryImages;
   });
 
   gymApp.controller('memberController', function($scope, $http, $window) {

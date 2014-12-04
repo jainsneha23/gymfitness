@@ -1,29 +1,57 @@
 gymApp.controller('gymController', function($scope, $http) {
 
-	activeTab = 0;
+    $scope.tabModel = [{
+        name: 'Activities',
+        isActive: true,
+        url: 'views/admin/activities.html',
+        model: model.activities
+    }, {
+        name: 'Equipments',
+        isActive: false,
+        url: 'views/admin/equipments.html',
+        model: model.equipments
+    }, {
+        name: 'Facilities',
+        isActive: false,
+        url: 'views/admin/facilities.html'
+    }, {
+        name: 'Packages',
+        isActive: false,
+        url: 'views/admin/packages.html'
+    }];
 
-    $scope.activities_model = model.activities;
-    $scope.equipments_model = model.equipments;
+    $scope.isOpened = [];
 
-    $scope.model = [$scope.activities_model,$scope.equipments_model];
+    $scope.edit = function() {
+        $scope.editItems = !$scope.editItems;
+        var length = getActivetabModel().length;
+        for (var i = 0; i < length; i++)
+            $scope.isOpened[i] = $scope.editItems ? false : null;
+    }
 
-    $scope.editItems = false;
     $scope.form = {
-    	name : '',
-    	description : ''
+        name: '',
+        description: ''
     };
 
-    $scope.addItem = function(){
-    	var item = {
-    		name : $scope.form.name,
-    		description : $scope.form.description
-    	};
-    	$scope.model[activeTab].push(item);
-    	$scope.form = {};
+    var getActivetabModel = function() {
+        var arr = $scope.tabModel.filter(function(value) {
+            return value.isActive == true
+        });
+        return arr[0].model;
+    }
+
+    $scope.addItem = function() {
+        var item = {
+            name: $scope.form.name,
+            description: $scope.form.description
+        };
+        getActivetabModel().push(item);
+        $scope.form = {};
     };
 
     $scope.deleteItem = function(index) {
-    	$scope.model[activeTab].splice(index,1);
+        getActivetabModel().splice(index, 1);
     }
 
 });
