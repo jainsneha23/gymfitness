@@ -36,7 +36,7 @@ right: 0;
 margin: auto;
 }
 
-body header{
+body > header{
 height: 10%;
 box-shadow: 0px 6px 6px -4px rgba(0, 0, 0, 0.6);
 background: #ac0376; /* Old browsers */
@@ -139,6 +139,17 @@ height: 40px;
 	position: relative;
 }
 
+.width100{
+	width: 95%;
+	margin: 3% auto;
+	min-height: 30px;
+}
+
+.toolbar > *{
+	margin:0 10px;
+}
+
+
 accordion button.btn-danger{
 	position: absolute;
 	top: 0;
@@ -230,3 +241,61 @@ height: 251px;
 .table img{
 height: 300px;
 }*/
+
+.table{
+	display: table;
+	border-collapse: collapse;
+}
+
+.tablerow{
+	display: table-row;
+}
+
+.tablerow.heading{
+	font-weight: bold;
+}
+
+div.tablecell{
+	display:table-cell;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #c3c3c3;
+}
+
+section header{
+	font-weight: bold;
+}
+
+form{
+	width: 80%;
+	margin:auto;
+}
+
+form input{
+	display: block;
+	width: 100%;
+	margin: 10px auto;
+	padding: 10px;
+	border: 1px solid rgb(214, 214, 214);
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+form input[type="file"]{
+	padding: 10px 0;
+}
+
+form input[type="radio"]{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+	text-align: left;
+}
+
+form label{
+	width: 40%;
+	display: inline-block;
+	font-weight: normal;
+}
