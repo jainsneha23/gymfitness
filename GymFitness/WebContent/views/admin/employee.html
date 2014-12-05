@@ -1,0 +1,71 @@
+<div class="width100 toolbar">
+	<button type="button" ng-click="deleteItems(); editItems = !editItems;" class="btn btn-primary pull-right">
+		<span ng-show="!editItems"><i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</span>
+		<span ng-show="editItems">&nbsp;Delete</span>
+	</button>
+	<button type="button" ng-click="addItem()" class="btn btn-primary pull-right">
+		<span><i class="glyphicon glyphicon-plus"></i>&nbsp;Add</span>
+	</button>
+</div>
+<ul class="table width100">
+	<li class="tablerow heading">
+		<div class="tablecell" ng-show="editItems"><input type="checkbox" ng-change="selectAll(allSelected)" ng-model="allSelected"/></div>
+		<div class="tablecell">First Name</div>
+		<div class="tablecell">Last Name</div>
+		<div class="tablecell">Contact</div>
+		<div class="tablecell">Email</div>
+		<div class="tablecell">Address</div>
+		<div class="tablecell">Birth Date</div>
+		<div class="tablecell">Gender</div>
+		<div class="tablecell">Joining Date</div>
+		<div class="tablecell">Salary</div>
+		<div class="tablecell">Last paid</div>
+	</li>
+	<li ng-repeat = "obj in employeeModel" class="tablerow">
+		<div class="tablecell" ng-show="editItems"><input type="checkbox" ng-model="obj.selected" ng-change="selectAll()"/></div>
+		<div class="tablecell">{{obj.fname}}</div>
+		<div class="tablecell">{{obj.lname}}</div>
+		<div class="tablecell">{{obj.contact}}</div>
+		<div class="tablecell">{{obj.email}}</div>
+		<div class="tablecell">{{obj.address}}<br>{{obj.city}}<br>{{obj.state}}<br>{{obj.country}}<br>{{obj.pin}}</div>
+		<div class="tablecell">{{obj.dob}}</div>
+		<div class="tablecell">{{obj.gender}}</div>
+		<div class="tablecell">{{obj.doj}}</div>
+		<div class="tablecell">{{obj.salary}}</div>
+		<div class="tablecell">{{obj.lastpaid}}</div>
+	</li>
+</ul>
+
+<script type="text/ng-template" id="addEmployee.html">
+	<div class="modal-header">
+	    <h3 class="modal-title">Add Employee</h3>
+	</div>
+	<div class="modal-body">
+	    <form name="registerForm" class="form">
+
+			<div ng-show='message'>{{message}}</div>
+
+			<input type="file" name="image" ng-model="registerFormData.image" placeholder="Upload Pic">
+			<input type="text" name="userid" ng-model="registerFormData.userid" placeholder="Username" ngRequired>
+
+			<section>
+			<header>Personal Details</header>
+			<input type="text" name="fname" ng-model="registerFormData.fname" placeholder="First Name" ngRequired>
+			<input type="text" name="lname" ng-model="registerFormData.lname" placeholder="Last Name" ngRequired>
+			<label><input type="radio" ng-model="registerFormData.gender" name="gender" value="male" ngRequired>Male</label>
+			<label><input type="radio" ng-model="registerFormData.gender" name="gender" value="female" ngRequired>Female</label>
+			<input type="date" name="dob" ng-model="registerFormData.dob" placeholder="Date of Birth" ngRequired>
+			</section>
+
+			<section>
+			<header>Contact Details</header>
+			<input type="number" name="phone" ng-model="registerFormData.contact" placeholder="Contact Number" ngRequired>
+			<input type="email" name="email" ng-model="registerFormData.email" placeholder="Email" ngRequired>
+			</section>
+		</form>
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="registerUser(registerForm)">OK</button>
+	    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</script>

@@ -74,6 +74,53 @@ var model = (function() {
         }, {
             image: 'images/gallery9.jpg',
             description: 'Description'
+        }],
+        employeeModel: [{
+            fname: "Sneha",
+            lname: "Jain",
+            contact: "1234567890",
+            email: "sneha.jain@gmail.com",
+            address: "munekollala",
+            city: "bangalore",
+            state: "karnataka",
+            country: "india",
+            pin: "560066",
+            dob: "23-05-1990",
+            gender: "f",
+            doj: "01-12-2013",
+            salary: "5000",
+            lastpaid: "30-11-2014"
+        }, {
+            fname: "Sumit",
+            lname: "Jain",
+            contact: "9876543210",
+            email: "sumit.jain@gmail.com",
+            address: "marathalli",
+            city: "cuttack",
+            state: "orissa",
+            country: "india",
+            pin: "532066",
+            dob: "13-05-1995",
+            gender: "m",
+            doj: "21-06-2013",
+            salary: "7000",
+            lastpaid: "31-10-2014"
+        }],
+        customerModel: [{
+            fname: "Sundar",
+            lname: "Laal",
+            contact: "1234567890",
+            email: "sneha.jain@gmail.com",
+            address: "munekollala",
+            city: "bangalore",
+            state: "karnataka",
+            country: "india",
+            pin: "560066",
+            dob: "23-05-1990",
+            gender: "f",
+            doj: "01-12-2013",
+            packages: "3",
+            lastpayment: "30-11-2014"
         }]
     }
     return modelData;
