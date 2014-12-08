@@ -145,16 +145,27 @@ height: 40px;
 	min-height: 30px;
 }
 
+.width50 > *{
+	width: 49%;
+	display: inline-block;
+}
+
 .toolbar > *{
 	margin:0 10px;
 }
 
 
-accordion button.btn-danger{
+.panel-heading button.btn-danger{
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
+}
+
+.panel-group input, .panel-group textarea{
+	width: 95%;
+	border: none;
+	background-color: transparent;
 }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
