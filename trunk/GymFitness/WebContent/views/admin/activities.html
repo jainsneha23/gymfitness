@@ -12,11 +12,15 @@
 </form>
 
 <accordion close-others="true">
-	<accordion-group ng-repeat="obj in tabModel[0].model" class="width80" is-disabled="editItems" is-open="isOpened[$index]">
+	<accordion-group ng-repeat="obj in tabModel[0].model" class="width80" is-disabled="disabled" is-open="isOpened[$index]">
 		<accordion-heading>
-            {{obj.name}}
+            <span ng-show = "!editItem[$index]">{{obj.name}}</span>
+            <input ng-model = "obj.name" ng-show = "editItem[$index]" />
+            <i class="glyphicon glyphicon-pencil pull-right" ng-show="!editItems && !editItem[$index]" ng-click="editRow($index)"></i>
+            <i class="glyphicon glyphicon-ok pull-right" ng-show="!editItems && editItem[$index]" ng-click="editRow($index)"></i>
             <button type="button" ng-click="deleteItem($index)" class="btn btn-danger" ng-show="editItems">X</button>
         </accordion-heading>
-		{{obj.description}}
+		<span ng-show = "!editItem[$index]">{{obj.description}}</span>
+		<textarea ng-model = "obj.description" ng-show = "editItem[$index]" rows="10" resizable="false"/>
 	</accordion-group>
 </accordion>

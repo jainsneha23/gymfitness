@@ -1,32 +1,27 @@
 gymApp.controller('gymController', function($scope) {
 
-    $scope.tabModel = [{
-        name: 'Activities',
-        isActive: true,
-        url: 'views/admin/activities.html',
-        model: model.activities
-    }, {
-        name: 'Equipments',
-        isActive: false,
-        url: 'views/admin/equipments.html',
-        model: model.equipments
-    }, {
-        name: 'Facilities',
-        isActive: false,
-        url: 'views/admin/facilities.html'
-    }, {
-        name: 'Packages',
-        isActive: false,
-        url: 'views/admin/packages.html'
-    }];
+    $scope.tabModel = model.tabModel;
 
     $scope.isOpened = [];
+    $scope.editItem = [];
+
+    $scope.disabled = false;
 
     $scope.edit = function() {
         $scope.editItems = !$scope.editItems;
+        $scope.disabled = !$scope.disabled;
         var length = getActivetabModel().length;
         for (var i = 0; i < length; i++)
             $scope.isOpened[i] = $scope.editItems ? false : null;
+    }
+
+    $scope.editRow = function(index) {
+        $scope.editItem[index] = !$scope.editItem[index];
+        $scope.isOpened[index] = $scope.editItem[index];
+        $scope.disabled = $scope.editItem[index];
+        var length = getActivetabModel().length;
+        for (var i = 0; i < length; i++)
+            $scope.editItem[i] = index == i ? $scope.editItem[i] : false;
     }
 
     $scope.form = {
@@ -54,10 +49,16 @@ gymApp.controller('gymController', function($scope) {
         getActivetabModel().splice(index, 1);
     }
 
+    $scope.selectTab = function(){
+        $scope.editItems = false;
+        $scope.isOpened = [];
+        $scope.editItem = [];
+    }
+
 });
 gymApp.controller('employeeController', function($scope, $modal) {
 
-    $scope.employeeModel = model.employeeModel;
+    $scope.employeeModel = tempmodel.employeeModel;
 
     $scope.allSelected = false;
 
