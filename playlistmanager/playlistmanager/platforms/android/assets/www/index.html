@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+      <title>Player Manager</title>
+      <link rel="stylesheet" href="css/jquery.mobile.min.css" type="text/css" media="all" />
+      <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.mobile.config.js"></script>
+      <script src="js/jquery.mobile.min.js"></script>
+      <script src="cordova.js"></script>
+      <script src="js/appFile.js"></script>
+      <script src="js/application.js"></script>
+      <script src="js/utility.js"></script>
+      <script src="js/player.js"></script>
+      <script>
+         $(document).on('pagebeforecreate orientationchange', Application.updateIcons);
+         $(document).one('deviceready', Application.initApplication);
+      </script>
+   </head>
+   <body>
+      <div id="files-list-page" data-role="page">
+         <header data-role="header">
+            <a href="#" data-icon="back" data-iconpos="notext" data-rel="back" title="Go back">Back</a>
+            <h1>Media List</h1>
+            <a href="#" id="update-button" data-icon="refresh" data-iconpos="notext">Update List</a>
+         </header>
+         <div data-role="content">
+            <ul id="files-list" data-role="listview" data-autodividers="true" data-filter="true" data-split-icon="delete">
+            </ul>
+         </div>
+         <footer data-role="footer">
+            <h3 id="copyright-title">Created by Aurelio De Rosa</h3>
+            <a id="credits-button" href="aurelio.html" data-icon="info" data-iconpos="notext" class="ui-btn-right">Credits</a>
+         </footer>
+      <div id="waiting-popup" data-role="popup" data-position-to="window" data-dismissible="false">
+         <header data-role="header">
+            <h1>Updating</h1>
+         </header>
+         <div data-role="content">
+            <p>Searching audio files, please wait...</p>
+         </div>
+      </div>
+      </div>
+   </body>
+</html>
