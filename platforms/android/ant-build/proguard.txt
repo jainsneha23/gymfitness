@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class in.stj.playlistmanager.CordovaApp { <init>(...); }
+
