@@ -41,7 +41,7 @@ import android.webkit.WebViewClient;
 /**
  * This class is the WebViewClient that implements callbacks for our web view.
  * The kind of callbacks that happen here are regarding the rendering of the
- * document instead of the chrome surrounding it, such as onPageStarted(), 
+ * document instead of the chrome surrounding it, such as onPageStarted(),
  * shouldOverrideUrlLoading(), etc. Related to but different than
  * CordovaChromeClient.
  *
@@ -52,14 +52,15 @@ import android.webkit.WebViewClient;
  */
 public class CordovaWebViewClient extends WebViewClient {
 
-	private static final String TAG = "CordovaWebViewClient";
+    private static final String TAG = "CordovaWebViewClient";
     CordovaInterface cordova;
     CordovaWebView appView;
     CordovaUriHelper helper;
-    private boolean doClearHistory = false;
     boolean isCurrentlyLoading;
-
-    /** The authorization tokens. */
+    private boolean doClearHistory = false;
+    /**
+     * The authorization tokens.
+     */
     private Hashtable<String, AuthenticationToken> authenticationTokens = new Hashtable<String, AuthenticationToken>();
 
     @Deprecated
@@ -94,15 +95,15 @@ public class CordovaWebViewClient extends WebViewClient {
      * Give the host application a chance to take over the control when a new url
      * is about to be loaded in the current WebView.
      *
-     * @param view          The WebView that is initiating the callback.
-     * @param url           The url to be loaded.
-     * @return              true to override, false for default behavior
+     * @param view The WebView that is initiating the callback.
+     * @param url  The url to be loaded.
+     * @return true to override, false for default behavior
      */
-	@Override
+    @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         return helper.shouldOverrideUrlLoading(view, url);
     }
-    
+
     /**
      * On received http auth request.
      * The method reacts on all registered authentication tokens. There is one and only one authentication token for any host + realm combination
@@ -119,8 +120,7 @@ public class CordovaWebViewClient extends WebViewClient {
         AuthenticationToken token = this.getAuthenticationToken(host, realm);
         if (token != null) {
             handler.proceed(token.getUserName(), token.getPassword());
-        }
-        else {
+        } else {
             // Handle 401 like we'd normally do!
             super.onReceivedHttpAuthRequest(view, handler, host, realm);
         }
@@ -132,8 +132,8 @@ public class CordovaWebViewClient extends WebViewClient {
      * one time for the main frame. This also means that onPageStarted will not be called when the contents of an
      * embedded frame changes, i.e. clicking a link whose target is an iframe.
      *
-     * @param view          The webview initiating the callback.
-     * @param url           The url of the page.
+     * @param view The webview initiating the callback.
+     * @param url  The url of the page.
      */
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -156,9 +156,8 @@ public class CordovaWebViewClient extends WebViewClient {
      * Notify the host application that a page has finished loading.
      * This method is called only for main frame. When onPageFinished() is called, the rendering picture may not be updated yet.
      *
-     *
-     * @param view          The webview initiating the callback.
-     * @param url           The url of the page.
+     * @param view The webview initiating the callback.
+     * @param url  The url of the page.
      */
     @Override
     public void onPageFinished(WebView view, String url) {
@@ -215,10 +214,10 @@ public class CordovaWebViewClient extends WebViewClient {
      * Report an error to the host application. These errors are unrecoverable (i.e. the main resource is unavailable).
      * The errorCode parameter corresponds to one of the ERROR_* constants.
      *
-     * @param view          The WebView that is initiating the callback.
-     * @param errorCode     The error code corresponding to an ERROR_* value.
-     * @param description   A String describing the error.
-     * @param failingUrl    The url that failed to load.
+     * @param view        The WebView that is initiating the callback.
+     * @param errorCode   The error code corresponding to an ERROR_* value.
+     * @param description A String describing the error.
+     * @param failingUrl  The url that failed to load.
      */
     @Override
     public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
@@ -261,9 +260,9 @@ public class CordovaWebViewClient extends WebViewClient {
      * Note that the decision may be retained for use in response to future SSL errors.
      * The default behavior is to cancel the load.
      *
-     * @param view          The WebView that is initiating the callback.
-     * @param handler       An SslErrorHandler object that will handle the user's response.
-     * @param error         The SSL error object.
+     * @param view    The WebView that is initiating the callback.
+     * @param handler An SslErrorHandler object that will handle the user's response.
+     * @param error   The SSL error object.
      */
     @TargetApi(8)
     @Override
@@ -312,7 +311,6 @@ public class CordovaWebViewClient extends WebViewClient {
      *
      * @param host
      * @param realm
-     *
      * @return the authentication token or null if did not exist
      */
     public AuthenticationToken removeAuthenticationToken(String host, String realm) {
@@ -321,7 +319,7 @@ public class CordovaWebViewClient extends WebViewClient {
 
     /**
      * Gets the authentication token.
-     *
+     * <p/>
      * In order it tries:
      * 1- host + realm
      * 2- host
@@ -330,7 +328,6 @@ public class CordovaWebViewClient extends WebViewClient {
      *
      * @param host
      * @param realm
-     *
      * @return the authentication token
      */
     public AuthenticationToken getAuthenticationToken(String host, String realm) {

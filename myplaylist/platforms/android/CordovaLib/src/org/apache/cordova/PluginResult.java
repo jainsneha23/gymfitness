@@ -24,6 +24,27 @@ import org.json.JSONObject;
 import android.util.Base64;
 
 public class PluginResult {
+    public static final int MESSAGE_TYPE_STRING = 1;
+    public static final int MESSAGE_TYPE_JSON = 2;
+    public static final int MESSAGE_TYPE_NUMBER = 3;
+    public static final int MESSAGE_TYPE_BOOLEAN = 4;
+    public static final int MESSAGE_TYPE_NULL = 5;
+    public static final int MESSAGE_TYPE_ARRAYBUFFER = 6;
+    // Use BINARYSTRING when your string may contain null characters.
+    // This is required to work around a bug in the platform :(.
+    public static final int MESSAGE_TYPE_BINARYSTRING = 7;
+    public static String[] StatusMessages = new String[]{
+            "No result",
+            "OK",
+            "Class not found",
+            "Illegal access",
+            "Instantiation error",
+            "Malformed url",
+            "IO error",
+            "Invalid action",
+            "JSON error",
+            "Error"
+    };
     private final int status;
     private final int messageType;
     private boolean keepCallback = false;
@@ -55,13 +76,13 @@ public class PluginResult {
     public PluginResult(Status status, int i) {
         this.status = status.ordinal();
         this.messageType = MESSAGE_TYPE_NUMBER;
-        this.encodedMessage = ""+i;
+        this.encodedMessage = "" + i;
     }
 
     public PluginResult(Status status, float f) {
         this.status = status.ordinal();
         this.messageType = MESSAGE_TYPE_NUMBER;
-        this.encodedMessage = ""+f;
+        this.encodedMessage = "" + f;
     }
 
     public PluginResult(Status status, boolean b) {
@@ -78,10 +99,6 @@ public class PluginResult {
         this.status = status.ordinal();
         this.messageType = binaryString ? MESSAGE_TYPE_BINARYSTRING : MESSAGE_TYPE_ARRAYBUFFER;
         this.encodedMessage = Base64.encodeToString(data, Base64.NO_WRAP);
-    }
-    
-    public void setKeepCallback(boolean b) {
-        this.keepCallback = b;
     }
 
     public int getStatus() {
@@ -111,6 +128,10 @@ public class PluginResult {
         return this.keepCallback;
     }
 
+    public void setKeepCallback(boolean b) {
+        this.keepCallback = b;
+    }
+
     @Deprecated // Use sendPluginResult instead of sendJavascript.
     public String getJSONString() {
         return "{\"status\":" + this.status + ",\"message\":" + this.getMessage() + ",\"keepCallback\":" + this.keepCallback + "}";
@@ -120,7 +141,7 @@ public class PluginResult {
     public String toCallbackString(String callbackId) {
         // If no result to be sent and keeping callback, then no need to sent back to JavaScript
         if ((status == PluginResult.Status.NO_RESULT.ordinal()) && keepCallback) {
-        	return null;
+            return null;
         }
 
         // Check the success (OK, NO_RESULT & !KEEP_CALLBACK)
@@ -133,36 +154,13 @@ public class PluginResult {
 
     @Deprecated // Use sendPluginResult instead of sendJavascript.
     public String toSuccessCallbackString(String callbackId) {
-        return "cordova.callbackSuccess('"+callbackId+"',"+this.getJSONString()+");";
+        return "cordova.callbackSuccess('" + callbackId + "'," + this.getJSONString() + ");";
     }
 
     @Deprecated // Use sendPluginResult instead of sendJavascript.
     public String toErrorCallbackString(String callbackId) {
-        return "cordova.callbackError('"+callbackId+"', " + this.getJSONString()+ ");";
+        return "cordova.callbackError('" + callbackId + "', " + this.getJSONString() + ");";
     }
-
-    public static final int MESSAGE_TYPE_STRING = 1;
-    public static final int MESSAGE_TYPE_JSON = 2;
-    public static final int MESSAGE_TYPE_NUMBER = 3;
-    public static final int MESSAGE_TYPE_BOOLEAN = 4;
-    public static final int MESSAGE_TYPE_NULL = 5;
-    public static final int MESSAGE_TYPE_ARRAYBUFFER = 6;
-    // Use BINARYSTRING when your string may contain null characters.
-    // This is required to work around a bug in the platform :(.
-    public static final int MESSAGE_TYPE_BINARYSTRING = 7;
-
-    public static String[] StatusMessages = new String[] {
-        "No result",
-        "OK",
-        "Class not found",
-        "Illegal access",
-        "Instantiation error",
-        "Malformed url",
-        "IO error",
-        "Invalid action",
-        "JSON error",
-        "Error"
-    };
 
     public enum Status {
         NO_RESULT,

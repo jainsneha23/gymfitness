@@ -26,11 +26,10 @@ import org.json.JSONException;
 
 @Deprecated // Deprecated in 3.1. To be removed in 4.0.
 public class JSONUtils {
-	public static List<String> toStringList(JSONArray array) throws JSONException {
-        if(array == null) {
+    public static List<String> toStringList(JSONArray array) throws JSONException {
+        if (array == null) {
             return null;
-        }
-        else {
+        } else {
             List<String> list = new ArrayList<String>();
 
             for (int i = 0; i < array.length(); i++) {

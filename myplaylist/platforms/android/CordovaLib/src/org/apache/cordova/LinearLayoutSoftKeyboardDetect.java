@@ -77,8 +77,7 @@ public class LinearLayoutSoftKeyboardDetect extends LinearLayout {
             LOG.d(TAG, "Ignore this event");
         }
         // Account for orientation change and ignore this event/Fire orientation change
-        else if (screenHeight == width)
-        {
+        else if (screenHeight == width) {
             int tmp_var = screenHeight;
             screenHeight = screenWidth;
             screenWidth = tmp_var;

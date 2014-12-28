@@ -46,12 +46,12 @@ public class Config {
             parser = new ConfigXmlParser();
         }
     }
-    
+
     /**
      * Add entry to approved list of URLs (whitelist)
      *
-     * @param origin        URL regular expression to allow
-     * @param subdomains    T=include all subdomains under origin
+     * @param origin     URL regular expression to allow
+     * @param subdomains T=include all subdomains under origin
      */
     public static void addWhiteListEntry(String origin, boolean subdomains) {
         if (parser == null) {
@@ -111,7 +111,7 @@ public class Config {
     public static List<PluginEntry> getPluginEntries() {
         return parser.getPluginEntries();
     }
-    
+
     public static CordovaPreferences getPreferences() {
         return parser.getPreferences();
     }
