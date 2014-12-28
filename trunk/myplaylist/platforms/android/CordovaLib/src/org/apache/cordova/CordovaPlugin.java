@@ -64,20 +64,20 @@ public class CordovaPlugin {
      */
     protected void pluginInitialize() {
     }
-    
+
     /**
      * Executes the request.
-     *
+     * <p/>
      * This method is called from the WebView thread. To do a non-trivial amount of work, use:
-     *     cordova.getThreadPool().execute(runnable);
-     *
+     * cordova.getThreadPool().execute(runnable);
+     * <p/>
      * To run on the UI thread, use:
-     *     cordova.getActivity().runOnUiThread(runnable);
+     * cordova.getActivity().runOnUiThread(runnable);
      *
      * @param action          The action to execute.
      * @param rawArgs         The exec() arguments in JSON form.
      * @param callbackContext The callback context used when calling back into JavaScript.
-     * @return                Whether the action was valid.
+     * @return Whether the action was valid.
      */
     public boolean execute(String action, String rawArgs, CallbackContext callbackContext) throws JSONException {
         JSONArray args = new JSONArray(rawArgs);
@@ -86,17 +86,17 @@ public class CordovaPlugin {
 
     /**
      * Executes the request.
-     *
+     * <p/>
      * This method is called from the WebView thread. To do a non-trivial amount of work, use:
-     *     cordova.getThreadPool().execute(runnable);
-     *
+     * cordova.getThreadPool().execute(runnable);
+     * <p/>
      * To run on the UI thread, use:
-     *     cordova.getActivity().runOnUiThread(runnable);
+     * cordova.getActivity().runOnUiThread(runnable);
      *
      * @param action          The action to execute.
      * @param args            The exec() arguments.
      * @param callbackContext The callback context used when calling back into JavaScript.
-     * @return                Whether the action was valid.
+     * @return Whether the action was valid.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         CordovaArgs cordovaArgs = new CordovaArgs(args);
@@ -105,17 +105,17 @@ public class CordovaPlugin {
 
     /**
      * Executes the request.
-     *
+     * <p/>
      * This method is called from the WebView thread. To do a non-trivial amount of work, use:
-     *     cordova.getThreadPool().execute(runnable);
-     *
+     * cordova.getThreadPool().execute(runnable);
+     * <p/>
      * To run on the UI thread, use:
-     *     cordova.getActivity().runOnUiThread(runnable);
+     * cordova.getActivity().runOnUiThread(runnable);
      *
      * @param action          The action to execute.
      * @param args            The exec() arguments, wrapped with some Cordova helpers.
      * @param callbackContext The callback context used when calling back into JavaScript.
-     * @return                Whether the action was valid.
+     * @return Whether the action was valid.
      */
     public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException {
         return false;
@@ -124,7 +124,7 @@ public class CordovaPlugin {
     /**
      * Called when the system is about to start resuming a previous activity.
      *
-     * @param multitasking		Flag indicating if multitasking is turned on for app
+     * @param multitasking Flag indicating if multitasking is turned on for app
      */
     public void onPause(boolean multitasking) {
     }
@@ -132,7 +132,7 @@ public class CordovaPlugin {
     /**
      * Called when the activity will start interacting with the user.
      *
-     * @param multitasking		Flag indicating if multitasking is turned on for app
+     * @param multitasking Flag indicating if multitasking is turned on for app
      */
     public void onResume(boolean multitasking) {
     }
@@ -152,9 +152,9 @@ public class CordovaPlugin {
     /**
      * Called when a message is sent to plugin.
      *
-     * @param id            The message id
-     * @param data          The message data
-     * @return              Object to stop propagation or null
+     * @param id   The message id
+     * @param data The message data
+     * @return Object to stop propagation or null
      */
     public Object onMessage(String id, Object data) {
         return null;
@@ -164,10 +164,10 @@ public class CordovaPlugin {
      * Called when an activity you launched exits, giving you the requestCode you started it with,
      * the resultCode it returned, and any additional data from it.
      *
-     * @param requestCode		The request code originally supplied to startActivityForResult(),
-     * 							allowing you to identify who this result came from.
-     * @param resultCode		The integer result code returned by the child activity through its setResult().
-     * @param intent				An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
+     * @param requestCode The request code originally supplied to startActivityForResult(),
+     *                    allowing you to identify who this result came from.
+     * @param resultCode  The integer result code returned by the child activity through its setResult().
+     * @param intent      An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
      */
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
     }
@@ -175,8 +175,8 @@ public class CordovaPlugin {
     /**
      * By specifying a <url-filter> in config.xml you can map a URL (using startsWith atm) to this method.
      *
-     * @param url				The URL that is trying to be loaded in the Cordova webview.
-     * @return					Return true to prevent the URL from loading. Default is false.
+     * @param url The URL that is trying to be loaded in the Cordova webview.
+     * @return Return true to prevent the URL from loading. Default is false.
      */
     public boolean onOverrideUrlLoading(String url) {
         return false;
@@ -188,12 +188,12 @@ public class CordovaPlugin {
     public Uri remapUri(Uri uri) {
         return null;
     }
-    
+
     /**
      * Called when the WebView does a top-level navigation or refreshes.
-     *
+     * <p/>
      * Plugins should stop any long-running processes and clean up internal state.
-     *
+     * <p/>
      * Does nothing by default.
      */
     public void onReset() {

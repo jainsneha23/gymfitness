@@ -40,7 +40,7 @@ public class CordovaBridge {
         this.pluginManager = pluginManager;
         this.jsMessageQueue = jsMessageQueue;
     }
-    
+
     public String jsExec(int bridgeSecret, String service, String action, String callbackId, String arguments) throws JSONException, IllegalAccessException {
         if (!verifySecret("exec()", bridgeSecret)) {
             return null;
@@ -100,20 +100,24 @@ public class CordovaBridge {
         return true;
     }
 
-    /** Called on page transitions */
+    /**
+     * Called on page transitions
+     */
     void clearBridgeSecret() {
         expectedBridgeSecret = -1;
     }
 
-    /** Called by cordova.js to initialize the bridge. */
+    /**
+     * Called by cordova.js to initialize the bridge.
+     */
     int generateBridgeSecret() {
-        expectedBridgeSecret = (int)(Math.random() * Integer.MAX_VALUE);
+        expectedBridgeSecret = (int) (Math.random() * Integer.MAX_VALUE);
         return expectedBridgeSecret;
     }
 
     public void reset(String loadedUrl) {
         jsMessageQueue.reset();
-        clearBridgeSecret();        
+        clearBridgeSecret();
         this.loadedUrl = loadedUrl;
     }
 
@@ -140,7 +144,7 @@ public class CordovaBridge {
             try {
                 int bridgeSecret = Integer.parseInt(defaultValue.substring(16));
                 jsSetNativeToJsBridgeMode(bridgeSecret, Integer.parseInt(message));
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
@@ -157,8 +161,7 @@ public class CordovaBridge {
                 e.printStackTrace();
             }
             return "";
-        }
-        else if (defaultValue != null && defaultValue.startsWith("gap_init:")) {
+        } else if (defaultValue != null && defaultValue.startsWith("gap_init:")) {
             // Protect against random iframes being able to talk through the bridge.
             // Trust only file URLs and the start URL's domain.
             // The extra origin.startsWith("http") is to protect against iframes with data: having "" as origin.
@@ -168,7 +171,7 @@ public class CordovaBridge {
                 jsMessageQueue.setBridgeMode(bridgeMode);
                 // Tell JS the bridge secret.
                 int secret = generateBridgeSecret();
-                return ""+secret;
+                return "" + secret;
             } else {
                 Log.e(LOG_TAG, "gap_init called from restricted origin: " + origin);
             }
@@ -176,7 +179,7 @@ public class CordovaBridge {
         }
         return null;
     }
-    
+
     public NativeToJsMessageQueue getMessageQueue() {
         return jsMessageQueue;
     }

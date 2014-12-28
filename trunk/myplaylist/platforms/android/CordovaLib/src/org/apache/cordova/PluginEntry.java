@@ -58,14 +58,14 @@ public class PluginEntry {
     }
 
     /**
-     * @param service               The name of the service
-     * @param pluginClass           The plugin class name
-     * @param onload                Create plugin object when HTML page is loaded
+     * @param service     The name of the service
+     * @param pluginClass The plugin class name
+     * @param onload      Create plugin object when HTML page is loaded
      */
     public PluginEntry(String service, String pluginClass, boolean onload) {
         this(service, pluginClass, onload, null, null);
     }
-    
+
     @Deprecated // urlFilters are going away
     public PluginEntry(String service, String pluginClass, boolean onload, List<String> urlFilters) {
         this.service = service;
