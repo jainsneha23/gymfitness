@@ -1,12 +1,23 @@
 var ManagerApp = angular.module('ManagerApp', []);
     ManagerApp.controller('listController', function($scope) {
         $scope.getSongs = function() {
-            cordova.exec(function(data) {
-                $scope.songsList = data;
-                console.log(data);
+            $scope.writeSongs(list);
+            try{
+                cordova.exec(function(data) {
+                    //$scope.writeSongs(data);
+                    console.log(data);
+                }, function(){
+                    alert('Error in finding songs');
+                }, "SongsPlugin", "getSongs", [""]);
+            }catch(e){
+                $scope.songsList = list;
                 $scope.$apply();
-            }, failure, "Echo", "getSongs", ["Sneha"]);
+            }
         };
+        $scope.writeSongs = function(data){
+            $scope.songsList = data;
+            $scope.$apply();
+        }
     });
 
 
@@ -15,12 +26,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     angular.bootstrap(document, ['ManagerApp']);
 }
-
-var failure = function(err) {
-    alert("Error calling Hello Plugin: " + err);
-}
-
-
 
 /*angular.module('ManagerApp.services.Cordova', [])
 
