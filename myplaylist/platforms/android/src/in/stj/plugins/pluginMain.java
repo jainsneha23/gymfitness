@@ -30,7 +30,7 @@ public class pluginMain extends CordovaPlugin{
     private void getList(String message, CallbackContext callbackContext) {
         Mp3Manager manager = new Mp3Manager();
         Activity activity=this.cordova.getActivity();
-        List<String> songsList = manager.getSongs(activity);
+        ArrayList<genericSongClass> songsList = manager.getSongs(activity);
         if(songsList.size() > 0){
             String json = new Gson().toJson(songsList);
             callbackContext.success(json);
