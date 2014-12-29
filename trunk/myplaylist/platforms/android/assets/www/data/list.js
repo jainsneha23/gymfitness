@@ -1,9 +1,9 @@
-[{
+var list = [{
     "album": "mp3",
     "artist": "\u003cunknown\u003e",
     "data": "/storage/emulated/0/mp3/✔ \u0027Manwa Laage\u0027 VIDEO FULL Song ♡ Happy New Year _ Arijit Singh (HD 1080p).mp3",
-    "displayName": "✔ \u0027Manwa Laage\u0027 VIDEO FULL Song ♡ Happy New Year _ Arijit Singh (HD 1080p).mp3",
-    "title": "✔ \u0027Manwa Laage\u0027 VIDEO FULL Song ♡ Happy New Year _ Arijit Singh (HD 1080p)",
+    "displayName": "Manwa Laage\u0027 VIDEO FULL Song ♡ Happy New Year _ Arijit Singh (HD 1080p).mp3",
+    "title": "Manwa Laage\u0027 VIDEO FULL Song ♡ Happy New Year _ Arijit Singh (HD 1080p)",
     "id": 5320,
     "isChecked": false,
     "duration": 352444
